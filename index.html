@@ -188,7 +188,7 @@ For neutron data reduction and analysis:
 - Collision prevention, scattering simulations...
 
 .center[.image-70[![sketch](assets/cryostat_scatter.jpg)]]
-.footnote[_Figure: Scattering intensity from above of a single crystal in a cryostat (Mads Bertelsen, University of Copenhagen)_]
+.footnote[_Figure: Scattering intensity from above of a single crystal in a cryostat ([Mads Bertelsen, University of Copenhagen](https://europeanspallationsource.se/article/2018/02/08/instrument-simulation-software-advances-help-eu-interview-mads-bertelsen))_]
 
 ---
 template: inverse
@@ -365,6 +365,36 @@ Map multiple faces to single detector ID for volumetric pixels
 
 ---
 ## `NXcylindrical_geometry`
+
+.left-column[
+`vertices`:
+```
+0.0,   0.0,  1.0
+0.5,   0.0,  1.0
+0.0,   0.0,  0.0
+1.0,   0.0,  1.0
+1.5,   0.0,  1.0
+1.0,   0.0,  0.0
+```
+`cylinders`:
+```
+0, 1, 2
+3, 4, 5
+```
+`detector_number`:
+```
+0, 0
+1, 1
+```
+]
+
+.right-column[
+- Order of verticies in `cylinders` matches `A, B, C` in diagram
+- Optional detector_number, similar to `detector_faces`
+- Well suited to tube detectors
+
+.center[.image-38[![cylinder](assets/cylinder_3_points.png)]]
+]
 
 .footnote[http://download.nexusformat.org/sphinx/classes/base_classes/NXcylindrical_geometry.html]
 ---
