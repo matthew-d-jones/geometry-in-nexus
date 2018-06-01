@@ -19,6 +19,7 @@
       .footnote {
         position: absolute;
         bottom: 3em;
+        font-size: 0.7em;
       }
       li p { line-height: 1.25em; }
       .red { color: #fa0000; }
@@ -251,17 +252,19 @@ Group containing datasets with:
 Components, for example an `NXdisk_chopper`, can "depend on" one of these transformations
 by having a `depends_on` dataset with a value of the path to the transformation.
 
-Transformations themselves can have a `depends_on` attribute to another transformation.
+.footnote[http://download.nexusformat.org/sphinx/classes/base_classes/NXtransformations.html]
 
 ---
 # Position and Orientation
 ## `NXtransformations`
 
-???
+Transformations can have a `depends_on` attribute to another transformation.
 
-To parse one simply follows the "depends on" chain
+To parse, follow chain and construct a transformation matrix at each step.
 
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+\\(T_1\\) depends on \\(T_2\\), which depends on \\(T_3\\) to give final transformation \\(T_f\\):
+
+$$ T_f = T_3 T_2 T_1 $$
 
 ---
 # Shape
@@ -335,6 +338,9 @@ Comprises:
 - Dataset with number of vertices in each face (1D array, size number of faces)
 - Dataset of vertices forming the faces, in winding order (1D array)
 ]
+
+.footnote[http://download.nexusformat.org/sphinx/classes/base_classes/NXoff_geometry.html]
+
 ---
 ## `NXoff_geometry`
 ## for pixel or detector
@@ -360,6 +366,7 @@ Map multiple faces to single detector ID for volumetric pixels
 ---
 ## `NXcylindrical_geometry`
 
+.footnote[http://download.nexusformat.org/sphinx/classes/base_classes/NXcylindrical_geometry.html]
 ---
 # Convert between OFF and NeXus
 
