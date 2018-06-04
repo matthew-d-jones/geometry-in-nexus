@@ -112,6 +112,16 @@
         float: right;
         padding-top: 1em;
       }
+
+      .left-half {
+        width: 50%;
+        float: left;
+      }
+      .right-half {
+        width: 50%;
+        float: right;
+      }
+
       .image-50 img {
         width: 50%;
       }
@@ -120,6 +130,9 @@
       }
       .image-80 img {
         width: 80%;
+      }
+      .image-96 img {
+        width: 96%;
       }
       .image-38 img {
         width: 38%;
@@ -400,31 +413,32 @@ Map multiple faces to single detector ID for volumetric pixels
 ---
 # Convert between OFF and NeXus
 
+- Straightforward – demonstrated in Python by a [NeXus Feature](https://github.com/nexusformat/features/blob/master/src/recipes/8CB1EBAE3B2DA51D/recipe.py)
+- 3D rendering or CAD software can be used to define or view the geometry
+
+.footnote[_WISH instrument (ISIS) - photograph and render of OFF file converted from a NeXus file_]
+
+.left-half[.image-96[![wish1](assets/wish.jpg)]]
+.right-half[.image-96[![wish2](assets/WISH_and_teapot.png)]]
+
+
+
 ???
 
-- NeXus Feature
-- Show python code for an individual group?
-- Can use CAD software to define shape
-- Existing tools to render in 3D, for example Geomview
----
-# Example instrument
-
-???
-
-[WISH 3D render and photo side by side?]
 (plus teapot - flexible, can describe any geometry)
 ---
 # ESS
 
+- Geometry information will be in raw-data NeXus files
+- Preliminary Mantid support nearly ready
+  - Performance looks promising vs IDF
+  - Optimisation for Instrument View may be necessary
+
+.center[.image-logo[![mantidlogo](assets/Mantid_Logo_Transparent_wiki.png)]]
+
 ???
 
-- Geometry description in all raw data files
-- Mantid Support! (can show Instrument View)
-- No need for Mantid IDF??
-- Show LOKI?
-
-
-- Scanning instruments, using NXlog, don’t go into detail on this, maybe mention at end?
+- in NeXus files, so reduction and analysis can make use of this information
 
 
     </textarea>
